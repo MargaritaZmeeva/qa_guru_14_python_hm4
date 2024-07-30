@@ -1,4 +1,6 @@
-import math, random
+import math
+import random
+
 
 def test_greeting():
     """
@@ -7,7 +9,7 @@ def test_greeting():
     name = "Анна"
     age = 25
     # TODO Сформируйте нужную строку
-    output = (f"{'Привет,'} {name}{'! Тебе'} {age} {'лет.'}")
+    output = f"{'Привет,'} {name}{'! Тебе'} {age} {'лет.'}"
     print(output)
 
     # Проверяем результат
@@ -22,17 +24,15 @@ def test_rectangle():
     a = 10
     b = 20
     # TODO сосчитайте периметр
-    perimeter = 2 * (a+b)
-    print(perimeter)
+    perimeter = 2 * (a + b)
 
     assert perimeter == 60
 
-
     # TODO сосчитайте площадь
     area = a * b
-    print(area)
 
     assert area == 200
+
 
 def test_circle():
     """
@@ -41,7 +41,7 @@ def test_circle():
     """
     r = 23
     # TODO сосчитайте площадь
-    area = math.pi * (r ** 2)
+    area = math.pi * r ** 2
     print(area)
 
     assert area == 1661.9025137490005
@@ -63,7 +63,6 @@ def test_random_list():
     for i in range(n):
         l.append(random.randint(1, 100))
     l.sort()
-    print(l)
 
     assert len(l) == 10
     assert all(l[i] <= l[i + 1] for i in range(len(l) - 1))
@@ -76,7 +75,6 @@ def test_unique_elements():
     l = [1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]
     # TODO удалите повторяющиеся элементы
     l = list(set(l))
-    print(l)
 
     assert isinstance(l, list)
     assert len(l) == 10
@@ -93,7 +91,6 @@ def test_dicts():
     second = [1, 2, 3, 4, 5]
     # TODO создайте словарь
     d = dict(zip(first, second))
-    print(d)
 
     assert isinstance(d, dict)
     assert len(d) == 5
